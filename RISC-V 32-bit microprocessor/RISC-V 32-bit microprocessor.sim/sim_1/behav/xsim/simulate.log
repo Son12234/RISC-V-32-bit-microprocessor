@@ -1,0 +1,78 @@
+Time resolution is 1 ps
+==============================================================
+ TESTBENCH RISC-V RV32I - PIPELINE 5 TANG
+==============================================================
+--- Kiem tra ket qua trong RAM du lieu ---
+[PASS] LUI+ADDI: RAM[0x000] = 0x12345678
+[PASS] AUIPC: RAM[0x004] = 0x00001014
+[PASS] SLTI: RAM[0x008] = 0x00000001
+[PASS] SLTIU: RAM[0x00c] = 0x00000000
+[PASS] XORI: RAM[0x010] = 0x0000000a
+[PASS] ORI: RAM[0x014] = 0x00000035
+[PASS] ANDI: RAM[0x018] = 0x00000078
+[PASS] SLLI: RAM[0x01c] = 0x00000050
+[PASS] SRLI: RAM[0x020] = 0x0000000f
+[PASS] SRAI: RAM[0x024] = 0xfffffffe
+[PASS] ADD: RAM[0x028] = 0x00000002
+[PASS] SUB: RAM[0x02c] = 0x00000008
+[PASS] SLL: RAM[0x030] = 0x000000a0
+[PASS] SLT: RAM[0x034] = 0x00000001
+[PASS] SLTU: RAM[0x038] = 0x00000000
+[PASS] XOR: RAM[0x03c] = 0x1234567d
+[PASS] SRL: RAM[0x040] = 0x0091a2b3
+[PASS] SRA: RAM[0x044] = 0xffffffff
+[PASS] OR: RAM[0x048] = 0x00000035
+[PASS] AND: RAM[0x04c] = 0x00000030
+[PASS] ADDI overflow wrap: RAM[0x050] = 0x80000000
+[PASS] SUB negative: RAM[0x054] = 0xfffffffb
+[PASS] SLT signed edge: RAM[0x058] = 0x00000001
+[PASS] SLTU unsigned edge: RAM[0x05c] = 0x00000000
+[PASS] SRA by 31: RAM[0x060] = 0xffffffff
+[PASS] SRAI by 31: RAM[0x064] = 0xffffffff
+[PASS] SLL shamt masked: RAM[0x068] = 0x000000a0
+[PASS] LUI max: RAM[0x06c] = 0xfffff000
+[PASS] SLTIU imm -1: RAM[0x070] = 0x00000001
+[PASS] SLTU 0 < nonzero: RAM[0x074] = 0x00000001
+[PASS] FWD EX/MEM + MEM/WB: RAM[0x078] = 0x00000032
+[PASS] regfile write-through: RAM[0x07c] = 0x00000002
+[PASS] x0 not forwarded: RAM[0x080] = 0x00000001
+[PASS] x0 reads zero: RAM[0x084] = 0x00000000
+[PASS] LOAD-USE stall: RAM[0x088] = 0x00000033
+[PASS] LOAD then STORE data: RAM[0x08c] = 0x00000032
+[PASS] LW: RAM[0x090] = 0x80f17f85
+[PASS] LB byte0 (neg): RAM[0x094] = 0xffffff85
+[PASS] LB byte1 (pos): RAM[0x098] = 0x0000007f
+[PASS] LB byte2 (neg): RAM[0x09c] = 0xfffffff1
+[PASS] LB byte3 (neg): RAM[0x0a0] = 0xffffff80
+[PASS] LBU byte0: RAM[0x0a4] = 0x00000085
+[PASS] LBU byte3: RAM[0x0a8] = 0x00000080
+[PASS] LH low (pos): RAM[0x0ac] = 0x00007f85
+[PASS] LH high (neg): RAM[0x0b0] = 0xffff80f1
+[PASS] LHU high: RAM[0x0b4] = 0x000080f1
+[PASS] LHU low: RAM[0x0b8] = 0x00007f85
+[PASS] SB x4 then LW: RAM[0x0bc] = 0x44332211
+[PASS] SH x2 then LW: RAM[0x0c0] = 0xbeefbeef
+[PASS] SB partial overwrite: RAM[0x0c4] = 0x80f17a85
+[PASS] LW negative offset: RAM[0x0c8] = 0x80f17a85
+[PASS] BRANCH score A (tests 0-10): RAM[0x0cc] = 0x000007ff
+[PASS] BRANCH score B (tests 11-13): RAM[0x0d0] = 0x00000007
+[PASS] back-to-back taken branches: RAM[0x0d4] = 0x00000001
+[PASS] forward into branch compare: RAM[0x0d8] = 0x00000001
+[PASS] branch after LOAD: RAM[0x0dc] = 0x00000001
+[PASS] LOOP sum 1..10 = 55: RAM[0x0e0] = 0x00000037
+[PASS] JAL link address: RAM[0x0e4] = 0x00000378
+[PASS] JALR link address: RAM[0x0e8] = 0x00000390
+[PASS] JALR with imm: RAM[0x0ec] = 0x000003a4
+[PASS] CALL/RET double(6)=12: RAM[0x0f0] = 0x0000000c
+[PASS] wrong-path flag (must be 0): RAM[0x0f4] = 0x00000000
+[PASS] wrong-path store (must be 0): RAM[0x0f8] = 0x00000000
+[PASS] RAM[0x300] untouched: RAM[0x300] = 0x00000000
+--- Kiem tra 32 thanh ghi ---
+==============================================================
+ Tong so phep kiem tra dat : 96
+ Tong so phep kiem tra sai : 0
+ So lan phat hien X/Z      : 0
+ So chu ky toi DONE_PC     : 316 (243 lenh, CPI ~ 1.30)
+ *** ALL TESTS PASSED ***
+==============================================================
+$finish called at time : 3358 ns : File "C:/Users/admin/Downloads/Project_Vivado/RISC-V 32-bit microprocessor/RISC-V 32-bit microprocessor.srcs/sim_1/imports/sim/tb_riscv_core.v" Line 243
